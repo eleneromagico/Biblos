@@ -30,14 +30,15 @@ session_start();
             exit;
         } else { // Login correcto
                           // Apertura de sesion
-                $_SESSION['usuario'] = $usuario;
+
             echo "Entramos a la bd";
             // Usuario y contrasena ok?
             $sql = "SELECT * FROM usuario WHERE dni='$dni' AND clave='$clave'";
             $resultado = mysql_query($sql);
             if (mysql_affected_rows() == 1) {
                 // Login correcto
-                $usuario = mysql_fetch_array($resultado);
+                $usuario = mysql_fetch_array($resultado);              
+                $_SESSION['usuario'] = $usuario;
                 echo "Hola " . $usuario['nombre_usuario'] . " (" . $usuario['tipo_id_tipo_usuario'] . ")<br>";
                 echo "<a href='menuG.php'>Dentro</a>";
 

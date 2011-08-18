@@ -9,7 +9,7 @@ if(!isset ($_SESSION['usuario'])) die("Debe logearse primero");
         <title></title>
     </head>
     <body>
-        MENU
+        <h1> MENU</h1>
         <?php
         
         if (!$_SESSION['usuario'] || !isset($_SESSION['usuario'])) {
@@ -24,6 +24,8 @@ if(!isset ($_SESSION['usuario'])) die("Debe logearse primero");
         ?>
         <h1>Opciones</h1>   
         <ul>
+            <li><a href='consulta_general.php'>Consulta general</a>
+            <li><a href='consulta_concreta.php'>Consulta concreta</a>    
             <li><a href='salida.php'>Salir</a>
         </ul>
     </body>
